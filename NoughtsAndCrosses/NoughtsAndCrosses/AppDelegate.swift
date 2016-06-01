@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         boardviewNavigationController = UINavigationController(rootViewController: boardViewController)
         
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
-        self.window?.rootViewController = self.boardviewNavigationController
+        self.window?.rootViewController = self.navigationController
         self.window?.makeKeyAndVisible()
         
         

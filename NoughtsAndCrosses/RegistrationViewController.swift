@@ -34,12 +34,19 @@ class RegistrationViewController: UIViewController {
     @IBAction func registerButtonTapped(sender: UIButton) {
         email = emailField.text
         password = passwordField.text
-        let userExists = UserController.sharedInstance.registerUser(email!, newPassword: password!)
-        if (userExists.user != nil) {
-            print("User registered in registration view")
-        }
+        
+        if (emailField.valid()) {
+
+        
+            let userExists = UserController.sharedInstance.registerUser(email!, newPassword: password!)
+            if (userExists.user != nil) {
+                print("User registered in registration view")
+                }
+            
         else if (userExists.failureMessage != nil) {
             print("\(userExists.failureMessage!)")
+            }
+        
         }
     }
     

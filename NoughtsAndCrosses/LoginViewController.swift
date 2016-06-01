@@ -10,7 +10,7 @@ import UIKit
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
     
-    @IBOutlet weak var emailField: UITextField!
+    @IBOutlet weak var emailField: EmailValidatedTextField!
     @IBOutlet weak var passwordField: UITextField!
     
     var email:String?
@@ -29,6 +29,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
         // passwordField.delegate = nil
+    
+        
         if textField == emailField {
             // textfield.text + string because we still havent made the change when we call textfield here. Change is made when we return true
             print("Email \(textField.text! + string)")

@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B7646CE1CFEE67100622FE6 /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7646CC1CFEE67100622FE6 /* LandingViewController.swift */; };
+		0B7646CF1CFEE67100622FE6 /* LandingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B7646CD1CFEE67100622FE6 /* LandingViewController.xib */; };
+		0B7646D21CFEE83C00622FE6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7646D01CFEE83C00622FE6 /* LoginViewController.swift */; };
+		0B7646D31CFEE83C00622FE6 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B7646D11CFEE83C00622FE6 /* LoginViewController.xib */; };
+		0B7646D71CFEEA4900622FE6 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7646D61CFEEA4900622FE6 /* UserController.swift */; };
+		0B7646DA1CFEEB9700622FE6 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7646D81CFEEB9700622FE6 /* RegistrationViewController.swift */; };
+		0B7646DB1CFEEB9700622FE6 /* RegistrationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B7646D91CFEEB9700622FE6 /* RegistrationViewController.xib */; };
+		0B7646E11CFEF34F00622FE6 /* EmailValidatedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7646E01CFEF34F00622FE6 /* EmailValidatedTextField.swift */; };
+		0BA5D9491CFCA2A000623633 /* OXGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA5D9481CFCA2A000623633 /* OXGame.swift */; };
 		42D447CE1CD765670070326E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D447CD1CD765670070326E /* AppDelegate.swift */; };
 		42D447D51CD765670070326E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42D447D41CD765670070326E /* Assets.xcassets */; };
 		42D447D81CD765670070326E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42D447D61CD765670070326E /* LaunchScreen.storyboard */; };
@@ -34,11 +43,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0B7646CC1CFEE67100622FE6 /* LandingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
+		0B7646CD1CFEE67100622FE6 /* LandingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LandingViewController.xib; sourceTree = "<group>"; };
+		0B7646D01CFEE83C00622FE6 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		0B7646D11CFEE83C00622FE6 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		0B7646D61CFEEA4900622FE6 /* UserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
+		0B7646D81CFEEB9700622FE6 /* RegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		0B7646D91CFEEB9700622FE6 /* RegistrationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegistrationViewController.xib; sourceTree = "<group>"; };
+		0B7646E01CFEF34F00622FE6 /* EmailValidatedTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailValidatedTextField.swift; sourceTree = "<group>"; };
+		0BA5D9481CFCA2A000623633 /* OXGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OXGame.swift; sourceTree = "<group>"; };
 		42D447CA1CD765670070326E /* NoughtsAndCrosses.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoughtsAndCrosses.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		42D447CD1CD765670070326E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		42D447D41CD765670070326E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		42D447CD1CD765670070326E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = NoughtsAndCrosses/AppDelegate.swift; sourceTree = "<group>"; };
+		42D447D41CD765670070326E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = NoughtsAndCrosses/Assets.xcassets; sourceTree = "<group>"; };
 		42D447D71CD765670070326E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		42D447D91CD765670070326E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		42D447D91CD765670070326E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = NoughtsAndCrosses/Info.plist; sourceTree = "<group>"; };
 		42D447DE1CD765680070326E /* NoughtsAndCrossesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NoughtsAndCrossesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		42D447E21CD765680070326E /* NoughtsAndCrossesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoughtsAndCrossesTests.swift; sourceTree = "<group>"; };
 		42D447E41CD765680070326E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -74,9 +92,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0B7646CB1CFEE62100622FE6 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				0B7646CC1CFEE67100622FE6 /* LandingViewController.swift */,
+				0B7646CD1CFEE67100622FE6 /* LandingViewController.xib */,
+				0B7646D01CFEE83C00622FE6 /* LoginViewController.swift */,
+				0B7646D11CFEE83C00622FE6 /* LoginViewController.xib */,
+				0B7646D81CFEEB9700622FE6 /* RegistrationViewController.swift */,
+				0B7646D91CFEEB9700622FE6 /* RegistrationViewController.xib */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
 		427A5B651CE0FF4A00328EE7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0BA5D9481CFCA2A000623633 /* OXGame.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -84,6 +116,13 @@
 		42D447C11CD765670070326E = {
 			isa = PBXGroup;
 			children = (
+				0B7646E01CFEF34F00622FE6 /* EmailValidatedTextField.swift */,
+				42D447CD1CD765670070326E /* AppDelegate.swift */,
+				42D447D41CD765670070326E /* Assets.xcassets */,
+				42D447D91CD765670070326E /* Info.plist */,
+				42D447D61CD765670070326E /* LaunchScreen.storyboard */,
+				0B7646D61CFEEA4900622FE6 /* UserController.swift */,
+				0B7646CB1CFEE62100622FE6 /* Login */,
 				42D447CC1CD765670070326E /* NoughtsAndCrosses */,
 				42D447E11CD765680070326E /* NoughtsAndCrossesTests */,
 				42D447EC1CD765680070326E /* NoughtsAndCrossesUITests */,
@@ -104,12 +143,8 @@
 		42D447CC1CD765670070326E /* NoughtsAndCrosses */ = {
 			isa = PBXGroup;
 			children = (
-				42D447CD1CD765670070326E /* AppDelegate.swift */,
 				FBDE70821CF87AD00025275C /* BoardViewController.swift */,
 				FBDE70831CF87AD00025275C /* BoardViewController.xib */,
-				42D447D41CD765670070326E /* Assets.xcassets */,
-				42D447D61CD765670070326E /* LaunchScreen.storyboard */,
-				42D447D91CD765670070326E /* Info.plist */,
 				427A5B651CE0FF4A00328EE7 /* Model */,
 			);
 			path = NoughtsAndCrosses;
@@ -201,6 +236,7 @@
 				TargetAttributes = {
 					42D447C91CD765670070326E = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = UQENDZ9K8Y;
 					};
 					42D447DD1CD765680070326E = {
 						CreatedOnToolsVersion = 7.3;
@@ -237,8 +273,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B7646D31CFEE83C00622FE6 /* LoginViewController.xib in Resources */,
 				42D447D81CD765670070326E /* LaunchScreen.storyboard in Resources */,
 				42D447D51CD765670070326E /* Assets.xcassets in Resources */,
+				0B7646DB1CFEEB9700622FE6 /* RegistrationViewController.xib in Resources */,
+				0B7646CF1CFEE67100622FE6 /* LandingViewController.xib in Resources */,
 				FBDE70851CF87AD00025275C /* BoardViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -264,8 +303,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B7646D71CFEEA4900622FE6 /* UserController.swift in Sources */,
 				42D447CE1CD765670070326E /* AppDelegate.swift in Sources */,
+				0BA5D9491CFCA2A000623633 /* OXGame.swift in Sources */,
+				0B7646CE1CFEE67100622FE6 /* LandingViewController.swift in Sources */,
+				0B7646DA1CFEEB9700622FE6 /* RegistrationViewController.swift in Sources */,
+				0B7646D21CFEE83C00622FE6 /* LoginViewController.swift in Sources */,
 				FBDE70841CF87AD00025275C /* BoardViewController.swift in Sources */,
+				0B7646E11CFEF34F00622FE6 /* EmailValidatedTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,6 +352,7 @@
 				42D447D71CD765670070326E /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = NoughtsAndCrosses;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -401,11 +447,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = NoughtsAndCrosses/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = AS.NoughtsAndCrosses;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -413,11 +462,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = NoughtsAndCrosses/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = AS.NoughtsAndCrosses;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

@@ -45,6 +45,7 @@ class UserController {
     }
     
     func loginUser(suppliedEmail: String, suppliedPassword: String) -> (failureMessage: String?, user: User?){
+        
         for user in users {
             if user.email == suppliedEmail {
                 if user.password == suppliedPassword {
@@ -58,5 +59,15 @@ class UserController {
         }
         
         return ("No user with that email", nil)
+    }
+    
+    func getStoredUser(id: String) -> User? {
+        if let userPassword: String = NSUserDefaults.standardUserDefaults().objectForKey("\(id)") as? String {
+            let user = User(email: id, password: userPassword)
+            return user
+        }
+        else {
+           return nil
+        }
     }
 }

@@ -57,6 +57,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         if (userExists.user != nil) {
             let appDelegate: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
             appDelegate.navigateToBoardViewNavigationController()
+            // at this point we are happy to login the user. So lets store the persistant value
+            NSUserDefaults.standardUserDefaults().setValue("TRUE", forKey: "userIsLoggedIn")
         }
             
         else if (userExists.failureMessage != nil) {

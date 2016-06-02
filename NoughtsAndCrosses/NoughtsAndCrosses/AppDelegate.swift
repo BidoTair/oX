@@ -14,28 +14,49 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var navigationController: UINavigationController?
     var boardviewNavigationController: UINavigationController?
+    var easterEggNavigationController: UINavigationController?
+    
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
-        let landingViewController = LandingViewController(nibName:"LandingViewController",bundle:nil)
-        self.navigationController = UINavigationController(rootViewController: landingViewController)
-        
-        
         let boardViewController = BoardViewController(nibName: "BoardViewController", bundle: nil)
         boardviewNavigationController = UINavigationController(rootViewController: boardViewController)
         
+        let landingViewController = LandingViewController(nibName:"LandingViewController",bundle:nil)
+        self.navigationController = UINavigationController(rootViewController: landingViewController)
+        
+    
+        
+        let easterEggController = EasterEggViewController(nibName: "EasterEggViewController", bundle: nil)
+        easterEggNavigationController = UINavigationController(rootViewController: easterEggController)
+        
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
-        self.window?.rootViewController = self.navigationController
         self.window?.makeKeyAndVisible()
         
+        let userIsLoggedIn = NSUserDefaults.standardUserDefaults().objectForKey("userIsLoggedIn")
         
+        if (userIsLoggedIn != nil) {
+            self.window?.rootViewController = self.boardviewNavigationController
+        }   else {
+            self.window?.rootViewController = self.navigationController
+        }
+        
+        EasterEggController.sharedInstance.initiate(self.window!)
         
         return true
     }
     
+    func navigateToLandingScreen() {
+        self.window?.rootViewController = self.navigationController
+    }
+    
     func navigateToBoardViewNavigationController () {
         self.window?.rootViewController = self.boardviewNavigationController
+    }
+    
+    func navigateToEasterEggScreen() {
+        self.window?.rootViewController = self.easterEggNavigationController
     }
 
     func applicationWillResignActive(application: UIApplication) {

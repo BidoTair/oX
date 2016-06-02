@@ -35,7 +35,7 @@ class BoardViewController: UIViewController {
     }
     
     func handleRotation(sender: UIRotationGestureRecognizer? = nil) {
-        print("Detected")
+//        print("Detected")
         // makes it rotate
         self.boardView.transform = CGAffineTransformMakeRotation(sender!.rotation)
         
@@ -56,7 +56,17 @@ class BoardViewController: UIViewController {
     }
     
     func handlePinch(sender: UIPinchGestureRecognizer? = nil) {
-        print("Pinch detected")
+        if(sender!.state == UIGestureRecognizerState.Ended) {
+            print("Pinch detected")
+        }
+        
+    }
+    
+    
+    @IBAction func logoutButtonTapped(sender: UIButton) {
+        let appDelegate: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        NSUserDefaults.standardUserDefaults().setValue(nil, forKey: "userIsLoggedIn")
+        appDelegate.navigateToLandingScreen()
         
     }
     

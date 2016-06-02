@@ -408,6 +408,13 @@
                         <action selector="newButtonTapped:" destination="-1" eventType="touchUpInside" id="eyw-Eo-ak1"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nFZ-Qy-EOC">
+                    <rect key="frame" x="27" y="72" width="52" height="30"/>
+                    <state key="normal" title="Log out"/>
+                    <connections>
+                        <action selector="logoutButtonTapped:" destination="-1" eventType="touchUpInside" id="27z-Tk-OsB"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="0.23529411764705882" green="0.60784313725490191" blue="0.49803921568627452" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>

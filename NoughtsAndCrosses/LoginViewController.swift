@@ -26,6 +26,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(animated: Bool) {
+        self.navigationController?.navigationBarHidden = false
+    }
+    
     
     func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
         // passwordField.delegate = nil
@@ -52,17 +56,36 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBAction func loginButtonTapped(sender: UIButton) {
         email = emailField.text
         password = passwordField.text
-        let userExists = UserController.sharedInstance.loginUser(email!, suppliedPassword: password!)
         
-        if (userExists.user != nil) {
-            let appDelegate: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-            appDelegate.navigateToBoardViewNavigationController()
+        UserController.sharedInstance.loginUser(email!, password: password!, presentingViewController: self, viewControllerCompletionFunction: {(user,message) in self.loginComplete(user,string:message)})
+        
+    }
+    
+    func loginComplete(user: User?, string: String?) -> () {
+        if (user != nil) {
+            
+            let alert = UIAlertController(title:"Login Successful", message:"You will now be logged in", preferredStyle: UIAlertControllerStyle.Alert)
+            let action = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: {(action) in
+                //when the user clicks "Ok", do the following
+                let appDelegate: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+                appDelegate.navigateToBoardViewNavigationController()
+            })
+            alert.addAction(action)
+            self.presentViewController(alert, animated: true, completion: nil)
+
+            
             // at this point we are happy to login the user. So lets store the persistant value
             NSUserDefaults.standardUserDefaults().setValue("TRUE", forKey: "userIsLoggedIn")
         }
             
-        else if (userExists.failureMessage != nil) {
-            print("\(userExists.failureMessage!)")
+        else if (string != nil) {
+            print("\(string)")
+            let alert = UIAlertController(title:"Login Failed", message:string!, preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: {
+                
+            })
+
         }
     }
     

@@ -8,28 +8,44 @@
 
 import Foundation
 
+enum CellType:String {
+    case O = "O"
+    
+    case X = "X"
+    
+    case EMPTY = ""
+}
+
+enum OXGameState:String {
+    case inProgress = "Game in progress"
+    case complete_no_one_won = "No one won"
+    case complete_someone_won = "Someone has won"
+}
+
+
 class OXGame {
     var turns: Int
     
     init () {
       turns = 0
     }
-    enum CellType:String {
-        case O = "O"
-        
-        case X = "X"
-        
-        case EMPTY = ""
-    }
     
-   private var board = [CellType](count:9, repeatedValue:CellType.EMPTY)
+    var hostUser: User?
+    var guestUser: User?
+    var backendState: OXGameState?
+    var gameId: String?
+    
+    
+   
+    
+    var board = [CellType](count:9, repeatedValue:CellType.EMPTY)
     
     enum OXGameState:String {
     case inProgress = "Game in progress"
     case complete_no_one_won = "No one won"
     case complete_someone_won = "Someone has won"
-    
   }
+    
     private var startType:CellType = CellType.X
     
     

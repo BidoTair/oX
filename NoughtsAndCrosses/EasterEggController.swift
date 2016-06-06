@@ -25,13 +25,13 @@ class EasterEggController: NSObject, UIGestureRecognizerDelegate {
     }
     
     enum Gesture {
-        case a
+        case twofingerSwipe
         case clockwise
         case counterclockwise
-        case d
+        case rightSwipe
     }
     
-    var correctGesture: [Gesture] = [.clockwise,.counterclockwise]
+    var correctGesture: [Gesture] = [.clockwise,.counterclockwise,.twofingerSwipe,.rightSwipe]
     var currentGesture: [Gesture] = []
     
     func initiate(view:UIView) {
@@ -54,19 +54,18 @@ class EasterEggController: NSObject, UIGestureRecognizerDelegate {
     }
     
     func handleLongPress(sender: UILongPressGestureRecognizer? = nil) {
-            print("detectedlongpress")
-            currentGesture.append(Gesture.a)
         
         self.state()
     }
     
     func handleRightSwipe(sender: UISwipeGestureRecognizer? = nil) {
         print("detcted right swipe")
+        currentGesture.append(Gesture.rightSwipe)
         self.state()
     }
     
     func handleTwoFingerSwipe(sender: UISwipeGestureRecognizer? = nil) {
-        currentGesture.append(Gesture.d)
+        currentGesture.append(Gesture.twofingerSwipe)
         print("detected twofinger swipe")
         self.state()
     }

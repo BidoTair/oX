@@ -10,10 +10,18 @@ import UIKit
 
 class LandingViewController: UIViewController {
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBarHidden = true
+        
+        let _ = ClosureExperiment()
         
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        self.navigationController?.navigationBarHidden = true
     }
     
     override func didReceiveMemoryWarning() {

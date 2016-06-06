@@ -11,10 +11,16 @@ import UIKit
 class BoardViewController: UIViewController {
     
     @IBOutlet weak var boardView: UIView!
+    // need this outlet to make button hidded when we got to the new game
     
-    var gameObject = OXGame()
     
+
     
+    @IBOutlet weak var logoutButton: UIButton!
+    @IBOutlet weak var networkplayButton: UIButton!
+    
+       
+    var networkGame: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +38,17 @@ class BoardViewController: UIViewController {
     // pinch works everywhere
         self.view.addGestureRecognizer(pinch)
         
+    }
+    
+    // need this function because viewWillAppear shows more often
+    override func viewWillAppear(animated: Bool) {
+        self.navigationController?.navigationBarHidden = true
+        
+        
+        if(networkGame) {
+            logoutButton.setTitle("Cancel", forState: UIControlState.Normal)
+            networkplayButton.hidden = true
+        }
     }
     
     func handleRotation(sender: UIRotationGestureRecognizer? = nil) {
@@ -63,12 +80,19 @@ class BoardViewController: UIViewController {
     }
     
     
+    
     @IBAction func logoutButtonTapped(sender: UIButton) {
-        let appDelegate: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        NSUserDefaults.standardUserDefaults().setValue(nil, forKey: "userIsLoggedIn")
-        appDelegate.navigateToLandingScreen()
-        
+        if(networkGame) {
+            self.restartGame()
+            self.navigationController?.popViewControllerAnimated(true)
+        }
+        else {
+            let appDelegate: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+            NSUserDefaults.standardUserDefaults().setValue(nil, forKey: "userIsLoggedIn")
+            appDelegate.navigateToLandingScreen()
+        }
     }
+    
     
     
     override func didReceiveMemoryWarning() {
@@ -76,36 +100,95 @@ class BoardViewController: UIViewController {
     }
 
     
-    @IBAction func buttonTapped(sender: AnyObject) {
+    
+    @IBAction func gridbuttonTapped(sender: UIButton) {
         print("\(sender.tag)")
-        gameObject.playMove(sender.tag)
-        sender.setTitle(String(gameObject.typeAtIndex(sender.tag)), forState: UIControlState.Normal)
         
-        let gameState = String(gameObject.state())
+        let title = OXGameController.sharedInstance.playMove(sender.tag)
+        sender.setTitle(String(title), forState: UIControlState.Normal)
+        
+        let gameState = String(OXGameController.sharedInstance.getCurrentGame()!.state())
         
         if (gameState == "complete_someone_won") {
-            print("Winner is " + "\(gameObject.typeAtIndex(sender.tag))")
+            print("Winner is " + "\(OXGameController.sharedInstance.getCurrentGame()!.typeAtIndex(sender.tag))")
+            OXGameController.sharedInstance.getCurrentGame()
+            OXGameController.sharedInstance.finishCurrentGame()
             self.restartGame()
-        }
-        else if (gameState == "complete_no_one_won") {
+            if (networkGame) {
+                self.navigationController?.popViewControllerAnimated(true)
+            }
+        } else if (gameState == "complete_no_one_won") {
             print("Game is a Tie")
+            OXGameController.sharedInstance.finishCurrentGame()
             self.restartGame()
-        }
-       
-    
-    }
+            if(networkGame) {
+                self.navigationController?.popViewControllerAnimated(true)
+            }
+        } else {
+            if (networkGame) {
+                
+                if (String(OXGameController.sharedInstance.getCurrentGame()!.state()) == "inProgress") {
+                    
+                    let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(2 * Double(NSEC_PER_SEC)))
+                    dispatch_after(delayTime, dispatch_get_main_queue()) {
+                    let (randomCellType, randomInt) = OXGameController.sharedInstance.playRandomMove()!
+                    let button = self.boardView.subviews[randomInt]
+                    
+                    if let buttonWorks = button as? UIButton {
+                        buttonWorks.setTitle(String(randomCellType), forState: UIControlState.Normal)
+                    }
+                    
+                    let gameState = String(OXGameController.sharedInstance.getCurrentGame()!.state())
+                    if (gameState == "complete_someone_won") {
+                        print("Winner is " + "\(OXGameController.sharedInstance.getCurrentGame()!.typeAtIndex(randomInt))")
+                        self.restartGame()
+                        self.navigationController?.popViewControllerAnimated(true)
+                    }
+                    else if (gameState == "complete_no_one_won") {
+                        print("Game is a Tie")
+                        self.restartGame()
+                        self.navigationController?.popViewControllerAnimated(true)
+                    }
+                    }
+                    
+                }
+            }
 
-    @IBAction func newButtonTapped(sender: AnyObject) {
-        restartGame()
+        }
+        
+}
+    
+
+   
+    @IBAction func newgameButtonTapped(sender: UIButton) {
+        if (networkGame) {
+            
+        }
+        else {
+         self.restartGame()
+        }
     }
+    
+    
+    
+    
+    
+    
+    @IBAction func networkplayButtonTapped(sender: AnyObject) {
+        let nvc = NetworkPlayViewController(nibName: "NetworkPlayViewController", bundle: nil)
+        self.navigationController?.pushViewController(nvc, animated: true)
+    }
+    
+    
+  
+    
     
     func restartGame() {
-       gameObject.reset()
+       OXGameController.sharedInstance.finishCurrentGame()
         for view in boardView.subviews {
             if let button = view as? UIButton {
                button.setTitle("", forState: UIControlState.Normal)
-            } 
-        
+            }
         
     }
     

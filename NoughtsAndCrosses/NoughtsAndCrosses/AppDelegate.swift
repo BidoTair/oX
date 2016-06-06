@@ -22,6 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let boardViewController = BoardViewController(nibName: "BoardViewController", bundle: nil)
         boardviewNavigationController = UINavigationController(rootViewController: boardViewController)
+        boardviewNavigationController!.navigationBarHidden = true
         
         let landingViewController = LandingViewController(nibName:"LandingViewController",bundle:nil)
         self.navigationController = UINavigationController(rootViewController: landingViewController)
@@ -33,6 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         self.window?.makeKeyAndVisible()
+        
         
         let userIsLoggedIn = NSUserDefaults.standardUserDefaults().objectForKey("userIsLoggedIn")
         

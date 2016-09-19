@@ -25,7 +25,6 @@
 		0B8F22241CFF3BCC008976A6 /* EasterEggViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8F22221CFF3BCC008976A6 /* EasterEggViewController.swift */; };
 		0B8F22251CFF3BCC008976A6 /* EasterEggViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B8F22231CFF3BCC008976A6 /* EasterEggViewController.xib */; };
 		0B8F22271CFF3C0A008976A6 /* EasterEggController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8F22261CFF3C0A008976A6 /* EasterEggController.swift */; };
-		0BA5D9491CFCA2A000623633 /* OXGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA5D9481CFCA2A000623633 /* OXGame.swift */; };
 		0BDA4D0D1D0484CD00B13823 /* BoardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BDA4D0C1D0484CD00B13823 /* BoardViewController.xib */; };
 		10FFD8E41DB6740815218701 /* Pods_NoughtsAndCrosses.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BF3E1E9DAFDD07A8693438F /* Pods_NoughtsAndCrosses.framework */; };
 		42D447CE1CD765670070326E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D447CD1CD765670070326E /* AppDelegate.swift */; };
@@ -72,7 +71,6 @@
 		0B8F22221CFF3BCC008976A6 /* EasterEggViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EasterEggViewController.swift; sourceTree = "<group>"; };
 		0B8F22231CFF3BCC008976A6 /* EasterEggViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EasterEggViewController.xib; sourceTree = "<group>"; };
 		0B8F22261CFF3C0A008976A6 /* EasterEggController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EasterEggController.swift; sourceTree = "<group>"; };
-		0BA5D9481CFCA2A000623633 /* OXGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OXGame.swift; path = NoughtsAndCrosses/OXGame.swift; sourceTree = "<group>"; };
 		0BDA4D0C1D0484CD00B13823 /* BoardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BoardViewController.xib; path = NoughtsAndCrosses/BoardViewController.xib; sourceTree = "<group>"; };
 		1BF3E1E9DAFDD07A8693438F /* Pods_NoughtsAndCrosses.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NoughtsAndCrosses.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		42D447CA1CD765670070326E /* NoughtsAndCrosses.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoughtsAndCrosses.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -120,7 +118,6 @@
 		0B67BF021D018A98008D6B58 /* ModelControllers */ = {
 			isa = PBXGroup;
 			children = (
-				0BA5D9481CFCA2A000623633 /* OXGame.swift */,
 				0B7646D61CFEEA4900622FE6 /* UserController.swift */,
 				0B67BF041D019926008D6B58 /* OXGameController.swift */,
 			);
@@ -424,7 +421,6 @@
 				0B8B61A51D057F7A005E8139 /* WebService.swift in Sources */,
 				0B8F22241CFF3BCC008976A6 /* EasterEggViewController.swift in Sources */,
 				42D447CE1CD765670070326E /* AppDelegate.swift in Sources */,
-				0BA5D9491CFCA2A000623633 /* OXGame.swift in Sources */,
 				0B7646CE1CFEE67100622FE6 /* LandingViewController.swift in Sources */,
 				0B8B61A71D0585AB005E8139 /* UIViewControllerExtensions.swift in Sources */,
 				0B7646DA1CFEEB9700622FE6 /* RegistrationViewController.swift in Sources */,

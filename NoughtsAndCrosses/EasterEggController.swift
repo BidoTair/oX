@@ -31,7 +31,7 @@ class EasterEggController: NSObject, UIGestureRecognizerDelegate {
         case rightSwipe
     }
     
-    var correctGesture: [Gesture] = [.clockwise,.counterclockwise,.twofingerSwipe,.rightSwipe]
+    var correctGesture: [Gesture] = [.clockwise,.counterclockwise, .twofingerSwipe,.rightSwipe]
     var currentGesture: [Gesture] = []
     
     func initiate(view:UIView) {

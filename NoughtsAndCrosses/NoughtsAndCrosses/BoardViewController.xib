@@ -3,6 +3,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
@@ -12,6 +14,7 @@
                 <outlet property="boardView" destination="qYi-hH-8b3" id="0Fk-VO-TT2"/>
                 <outlet property="logoutButton" destination="ked-oN-jRc" id="wWC-SX-PCw"/>
                 <outlet property="networkplayButton" destination="5zQ-HX-Djc" id="5QX-6P-z5B"/>
+                <outlet property="newgameButton" destination="qSP-P1-uv7" id="2Cs-KI-qcC"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -51,16 +54,6 @@
                             </state>
                             <connections>
                                 <action selector="gridbuttonTapped:" destination="-1" eventType="touchUpInside" id="F42-sJ-qiV"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ouQ-ap-EjW">
-                            <rect key="frame" x="255" y="0.0" width="119" height="118"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="60"/>
-                            <state key="normal">
-                                <color key="titleColor" red="0.89019607840000003" green="0.1215686275" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
-                            </state>
-                            <connections>
-                                <action selector="gridbuttonTapped:" destination="-1" eventType="touchUpInside" id="dCj-2O-5Rq"/>
                             </connections>
                         </button>
                         <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KpC-Ia-fSQ">
@@ -165,6 +158,16 @@
                                 <constraint firstAttribute="height" constant="5" id="mgk-y5-0cw"/>
                             </constraints>
                         </view>
+                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ouQ-ap-EjW">
+                            <rect key="frame" x="255" y="0.0" width="119" height="118"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                            <state key="normal">
+                                <color key="titleColor" red="0.89019607840000003" green="0.1215686275" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="gridbuttonTapped:" destination="-1" eventType="touchUpInside" id="dCj-2O-5Rq"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <constraints>
                         <constraint firstItem="wqL-6N-dzo" firstAttribute="width" secondItem="qYi-hH-8b3" secondAttribute="width" multiplier="0.333" id="09T-Bw-3Cz"/>
@@ -421,8 +424,12 @@
                         <action selector="logoutButtonTapped:" destination="-1" eventType="touchUpInside" id="mai-gT-MHy"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5zQ-HX-Djc">
-                    <rect key="frame" x="25" y="146" width="91" height="30"/>
+                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5zQ-HX-Djc">
+                    <rect key="frame" x="283" y="31" width="111" height="33"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="pfd-px-1Tv"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <state key="normal" title="Network Play">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -433,9 +440,11 @@
             </subviews>
             <color key="backgroundColor" red="0.23529411764705882" green="0.60784313725490191" blue="0.49803921568627452" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
+                <constraint firstItem="5zQ-HX-Djc" firstAttribute="leading" secondItem="k6O-si-s1J" secondAttribute="trailing" constant="26" id="2KH-hJ-M6o"/>
                 <constraint firstItem="ked-oN-jRc" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="11" id="HGP-n7-Jfb"/>
                 <constraint firstItem="qYi-hH-8b3" firstAttribute="width" secondItem="qYi-hH-8b3" secondAttribute="height" multiplier="115:115" constant="5" id="HaJ-BB-quF"/>
                 <constraint firstAttribute="bottom" secondItem="qSP-P1-uv7" secondAttribute="bottom" id="Nne-tZ-nj8"/>
+                <constraint firstItem="5zQ-HX-Djc" firstAttribute="baseline" secondItem="ked-oN-jRc" secondAttribute="firstBaseline" id="QwN-gM-8SQ"/>
                 <constraint firstItem="k6O-si-s1J" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="RNm-oP-Ohl"/>
                 <constraint firstItem="qYi-hH-8b3" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="TEW-Or-WEp">
                     <variation key="heightClass=regular" constant="20"/>
@@ -449,10 +458,13 @@
                 </constraint>
                 <constraint firstItem="ked-oN-jRc" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="30" id="d6N-9I-Sjd"/>
                 <constraint firstItem="qYi-hH-8b3" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="20" id="d8s-qj-E3B"/>
+                <constraint firstItem="5zQ-HX-Djc" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="31" id="fqw-Ln-6CM"/>
+                <constraint firstAttribute="trailing" secondItem="5zQ-HX-Djc" secondAttribute="trailing" constant="20" id="qz0-MZ-4ap"/>
                 <constraint firstItem="qYi-hH-8b3" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="20" id="t2d-On-XYB">
                     <variation key="heightClass=regular" constant="20"/>
                 </constraint>
                 <constraint firstItem="qSP-P1-uv7" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="wYo-EN-HYZ"/>
+                <constraint firstItem="5zQ-HX-Djc" firstAttribute="firstBaseline" secondItem="ked-oN-jRc" secondAttribute="baseline" id="wbm-Vy-Oyt"/>
             </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>

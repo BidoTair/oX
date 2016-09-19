@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="NoughtsAndCrosses" customModuleProvider="target">
@@ -17,25 +18,35 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ujz-Rp-Scx" customClass="EmailValidatedTextField" customModule="NoughtsAndCrosses" customModuleProvider="target">
-                    <rect key="frame" x="132" y="98" width="97" height="30"/>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ujz-Rp-Scx" customClass="EmailValidatedTextField" customModule="NoughtsAndCrosses" customModuleProvider="target">
+                    <rect key="frame" x="8" y="98" width="354" height="30"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SSd-no-1jr">
-                    <rect key="frame" x="132" y="164" width="97" height="30"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
-                </textField>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l65-AL-f4a">
-                    <rect key="frame" x="163" y="237" width="34" height="30"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l65-AL-f4a">
+                    <rect key="frame" x="170.5" y="215" width="34" height="30"/>
                     <state key="normal" title="login"/>
                     <connections>
                         <action selector="loginButtonTapped:" destination="-1" eventType="touchUpInside" id="pmA-db-ACz"/>
                     </connections>
                 </button>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SSd-no-1jr">
+                    <rect key="frame" x="8" y="151" width="354" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="Ujz-Rp-Scx" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leadingMargin" id="545-zE-boF"/>
+                <constraint firstItem="SSd-no-1jr" firstAttribute="top" secondItem="Ujz-Rp-Scx" secondAttribute="bottom" constant="23" id="O2x-jh-a5U"/>
+                <constraint firstItem="Ujz-Rp-Scx" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="98" id="Qa9-O4-Tvg"/>
+                <constraint firstItem="l65-AL-f4a" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="V0J-QK-ruS"/>
+                <constraint firstAttribute="trailing" secondItem="Ujz-Rp-Scx" secondAttribute="trailing" constant="13" id="gnL-Wl-gKh"/>
+                <constraint firstItem="Ujz-Rp-Scx" firstAttribute="leading" secondItem="SSd-no-1jr" secondAttribute="leading" id="iex-a3-fQm"/>
+                <constraint firstItem="Ujz-Rp-Scx" firstAttribute="trailing" secondItem="SSd-no-1jr" secondAttribute="trailing" id="kiu-sF-9cf"/>
+                <constraint firstItem="l65-AL-f4a" firstAttribute="top" secondItem="SSd-no-1jr" secondAttribute="bottom" constant="34" id="pbn-de-dQW"/>
+            </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
         </view>
     </objects>
